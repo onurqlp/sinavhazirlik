@@ -656,7 +656,7 @@
       position: fixed;
       inset: 0;
       z-index: 9999;
-      display: none;
+      display: none !important;
       align-items: center;
       justify-content: center;
       padding: 22px;
@@ -665,7 +665,15 @@
     }
 
     .password-modal.active {
-      display: flex;
+      display: flex !important;
+    }
+
+    /* Merkezi sistem bu alanı giriş durumunu bildirmek için açar. */
+    #aydaProtectedContent {
+      display: none;
+      width: 0;
+      height: 0;
+      overflow: hidden;
     }
 
     .password-card {
@@ -794,7 +802,7 @@
       margin-top: 10px;
     }
 
-    .password-error.active {
+    .password-error:not(:empty) {
       display: block;
     }
 
@@ -1215,7 +1223,7 @@
   </div>
 
   <!-- Şifre Modal -->
-  <div class="password-modal" id="passwordModal">
+  <div class="password-modal" id="aydaLoginBox">
     <div class="password-card">
       <button class="password-close" type="button" onclick="closePasswordModal()">×</button>
 
@@ -1229,13 +1237,11 @@
       <p>Devam etmek için size verilen AYDA giriş şifresini yazınız.</p>
 
       <div class="password-row">
-        <input type="password" id="passwordInput" placeholder="Şifre" autocomplete="current-password">
-        <button type="button" onclick="checkPassword()">Giriş</button>
+        <input type="password" id="aydaPasswordInput" placeholder="Şifre" autocomplete="current-password">
+        <button type="button" onclick="aydaCheckPassword()">Giriş</button>
       </div>
 
-      <div class="password-error" id="passwordError">
-        Şifre hatalı. Lütfen tekrar deneyiniz.
-      </div>
+      <div class="password-error" id="aydaLoginMessage" role="status" aria-live="polite"></div>
 
       <div class="password-note">
         Şifrenizi bilmiyorsanız AYDA ekibiyle WhatsApp üzerinden iletişime geçebilirsiniz.
@@ -1243,123 +1249,67 @@
     </div>
   </div>
 
-  <script>
-    const AYDA_PASSWORD_URL = "https://onurqlp.github.io/ayda-pass/passwords.json";
+  <!-- access-control.js başarılı girişte bu alanı görünür yapar. -->
+  <div id="aydaProtectedContent" aria-hidden="true"></div>
 
-    const trFold = s => s.toLocaleLowerCase('tr-TR')
-      .replace(/ı/g,'i')
-      .replace(/ö/g,'o')
-      .replace(/ü/g,'u')
-      .replace(/ş/g,'s')
-      .replace(/ç/g,'c')
-      .replace(/ğ/g,'g');
+  <script src="https://onurqlp.github.io/ayda-pass/access-control.js" onerror="window.__aydaAccessScriptFailed = true"></script>
+
+  <script>
+    const AYDA_TARGET_KEY = "ayda_exam_target_url";
 
     let targetUrl = "";
-    let targetLevelName = "";
 
-    const passwordModal = document.getElementById("passwordModal");
-    const passwordInput = document.getElementById("passwordInput");
-    const passwordError = document.getElementById("passwordError");
+    const aydaLoginBox = document.getElementById("aydaLoginBox");
+    const aydaPasswordInput = document.getElementById("aydaPasswordInput");
+    const aydaLoginMessage = document.getElementById("aydaLoginMessage");
+    const aydaProtectedContent = document.getElementById("aydaProtectedContent");
     const modalLevelName = document.getElementById("modalLevelName");
+
+    function centralAccessIsOpen() {
+      return window.getComputedStyle(aydaProtectedContent).display !== "none";
+    }
+
+    function redirectToSelectedLevel() {
+      const pendingUrl = targetUrl || sessionStorage.getItem(AYDA_TARGET_KEY) || "";
+
+      if (!pendingUrl || !centralAccessIsOpen()) return;
+
+      sessionStorage.removeItem(AYDA_TARGET_KEY);
+      targetUrl = "";
+      window.location.href = pendingUrl;
+    }
 
     function openPasswordModal(levelName, url) {
       targetUrl = url;
-      targetLevelName = levelName;
+      sessionStorage.setItem(AYDA_TARGET_KEY, url);
+
+      if (centralAccessIsOpen()) {
+        redirectToSelectedLevel();
+        return;
+      }
 
       modalLevelName.textContent = levelName;
-      passwordInput.value = "";
-      passwordError.classList.remove("active");
-      passwordError.textContent = "Şifre hatalı. Lütfen tekrar deneyiniz.";
-      passwordModal.classList.add("active");
+      aydaPasswordInput.value = "";
+      aydaLoginMessage.textContent = "";
+      aydaLoginBox.classList.add("active");
 
       setTimeout(() => {
-        passwordInput.focus();
+        aydaPasswordInput.focus();
       }, 100);
     }
 
     function closePasswordModal() {
-      passwordModal.classList.remove("active");
-      passwordInput.value = "";
-      passwordError.classList.remove("active");
+      aydaLoginBox.classList.remove("active");
+      aydaPasswordInput.value = "";
+      aydaLoginMessage.textContent = "";
       targetUrl = "";
-      targetLevelName = "";
+      sessionStorage.removeItem(AYDA_TARGET_KEY);
     }
 
-    function findPasswordGroup(passwordGroups, enteredPassword) {
-      const normalizedEntered = trFold(enteredPassword.trim());
-
-      return passwordGroups.find(group => {
-        if (group.active !== true) return false;
-        if (!Array.isArray(group.codes)) return false;
-
-        return group.codes.some(code => trFold(String(code).trim()) === normalizedEntered);
-      });
-    }
-
-    async function checkPassword() {
-      const enteredPassword = passwordInput.value.trim();
-
-      if (!enteredPassword) {
-        passwordError.textContent = "Lütfen şifre giriniz.";
-        passwordError.classList.add("active");
-        passwordInput.focus();
-        return;
-      }
-
-      try {
-        const response = await fetch(AYDA_PASSWORD_URL + "?v=" + Date.now());
-        const passwordGroups = await response.json();
-
-        const group = findPasswordGroup(passwordGroups, enteredPassword);
-
-        if (!group) {
-          passwordError.textContent = "Şifre hatalı veya pasif durumda.";
-          passwordError.classList.add("active");
-          passwordInput.value = "";
-          passwordInput.focus();
-          return;
-        }
-
-        const now = new Date();
-        const expireDate = new Date(group.expires + "T23:59:59");
-
-        if (now > expireDate) {
-          passwordError.textContent = "Bu şifrenin genel kullanım süresi dolmuştur.";
-          passwordError.classList.add("active");
-          passwordInput.value = "";
-          passwordInput.focus();
-          return;
-        }
-
-        const storageKey = "ayda_first_login_" + trFold(enteredPassword);
-        const firstLogin = localStorage.getItem(storageKey);
-
-        if (!firstLogin) {
-          localStorage.setItem(storageKey, new Date().toISOString());
-        } else {
-          const firstDate = new Date(firstLogin);
-          const diffDays = (now - firstDate) / (1000 * 60 * 60 * 24);
-
-          if (diffDays > Number(group.durationDays)) {
-            passwordError.textContent = "Bu şifrenin ilk girişten sonraki kullanım süresi dolmuştur.";
-            passwordError.classList.add("active");
-            passwordInput.value = "";
-            passwordInput.focus();
-            return;
-          }
-        }
-
-        window.location.href = targetUrl;
-
-      } catch (error) {
-        passwordError.textContent = "Şifre sistemi yüklenemedi. Lütfen tekrar deneyiniz.";
-        passwordError.classList.add("active");
-      }
-    }
-
-    passwordInput.addEventListener("keydown", function(event) {
+    aydaPasswordInput.addEventListener("keydown", function(event) {
       if (event.key === "Enter") {
-        checkPassword();
+        event.preventDefault();
+        aydaCheckPassword();
       }
 
       if (event.key === "Escape") {
@@ -1367,10 +1317,25 @@
       }
     });
 
-    passwordModal.addEventListener("click", function(event) {
-      if (event.target === passwordModal) {
+    aydaLoginBox.addEventListener("click", function(event) {
+      if (event.target === aydaLoginBox) {
         closePasswordModal();
       }
+    });
+
+    const accessObserver = new MutationObserver(redirectToSelectedLevel);
+    accessObserver.observe(aydaProtectedContent, {
+      attributes: true,
+      attributeFilter: ["style", "class"]
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      if (window.__aydaAccessScriptFailed || typeof window.aydaCheckPassword !== "function") {
+        aydaLoginMessage.textContent = "Şifre sistemi yüklenemedi. Lütfen tekrar deneyiniz.";
+      }
+
+      redirectToSelectedLevel();
+      setTimeout(redirectToSelectedLevel, 300);
     });
   </script>
 </body>
