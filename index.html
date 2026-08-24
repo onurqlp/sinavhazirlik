@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#234078" />
 
-  <title>AYDA TELC Sınav Hazırlık Platformu</title>
+  <title>AYDA Sınav Hazırlık Platformu</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -303,7 +303,7 @@
 
     .level-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 18px;
     }
 
@@ -331,6 +331,7 @@
     .level-card:nth-child(2) { animation-delay: 0.14s; }
     .level-card:nth-child(3) { animation-delay: 0.20s; }
     .level-card:nth-child(4) { animation-delay: 0.26s; }
+    .level-card:nth-child(5) { animation-delay: 0.32s; }
 
     .level-card::before {
       content: '';
@@ -957,7 +958,7 @@
         </div>
         <div class="brand-text">
           <strong>AYDA Dil Akademisi</strong>
-          <span>TELC • Goethe • Online Almanca</span>
+          <span>TELC • ÖSD • Online Almanca</span>
         </div>
       </a>
 
@@ -977,7 +978,7 @@
       <section class="hero">
         <div class="hero-badge">
           <i class="fa-solid fa-certificate"></i>
-          AYDA TELC Sınav Hazırlık Platformu
+          AYDA Sınav Hazırlık Platformu
         </div>
 
         <h1>
@@ -985,7 +986,7 @@
         </h1>
 
         <p>
-          A1’den B2’ye kadar TELC ve Goethe sınavlarına yönelik hazırlanmış çalışma alanlarına buradan ulaşabilirsiniz.
+          A1’den B2’ye kadar TELC ve ÖSD sınavlarına yönelik hazırlanmış çalışma alanlarına buradan ulaşabilirsiniz.
           Seviyenizi seçin, size verilen şifreyi girin ve ilgili hazırlık platformuna geçin.
         </p>
 
@@ -1010,7 +1011,7 @@
 
         <div class="level-grid">
 
-          <a href="#" class="level-card" onclick="openPasswordModal('A1 Goethe / TELC Hazırlık', 'https://onurqlp.github.io/A1hazirlik/'); return false;">
+          <a href="#" class="level-card" onclick="openPasswordModal('A1 TELC Hazırlık', 'https://onurqlp.github.io/A1hazirlik/'); return false;">
             <div>
               <div class="level-top">
                 <div class="level-label">A1</div>
@@ -1020,15 +1021,44 @@
               </div>
 
               <div class="level-body">
-                <h3>A1 Goethe / TELC Hazırlık</h3>
+                <h3>A1 TELC Hazırlık</h3>
                 <p>
-                  Temel Almanca seviyesi için başlangıç odaklı sınav hazırlık alanı.
-                  Kelime, yapı, temel okuma ve sınav pratiği için uygundur.
+                  TELC A1 sınavına yönelik temel kelime, okuma, yazma, dinleme ve konuşma çalışmaları için hazırlanmış sınav hazırlık alanı.
                 </p>
 
                 <div class="level-tags">
-                  <span class="tag"><i class="fa-solid fa-check"></i> Başlangıç</span>
-                  <span class="tag"><i class="fa-solid fa-check"></i> Goethe/TELC</span>
+                  <span class="tag"><i class="fa-solid fa-check"></i> A1 Sınav</span>
+                  <span class="tag"><i class="fa-solid fa-check"></i> TELC</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="level-footer">
+              <span>Şifre ile giriş</span>
+              <span class="enter-pill">
+                Başla <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </div>
+          </a>
+
+          <a href="#" class="level-card" onclick="openPasswordModal('A1 ÖSD Hazırlık', 'https://onurqlp.github.io/osd_a1_ayda/'); return false;">
+            <div>
+              <div class="level-top">
+                <div class="level-label">A1</div>
+                <div class="level-icon">
+                  <i class="fa-solid fa-certificate"></i>
+                </div>
+              </div>
+
+              <div class="level-body">
+                <h3>A1 ÖSD Hazırlık</h3>
+                <p>
+                  ÖSD A1 sınavına yönelik soru tipleri, temel beceriler ve sınav pratiği için hazırlanmış özel çalışma alanı.
+                </p>
+
+                <div class="level-tags">
+                  <span class="tag"><i class="fa-solid fa-check"></i> A1 Sınav</span>
+                  <span class="tag"><i class="fa-solid fa-check"></i> ÖSD</span>
                 </div>
               </div>
             </div>
@@ -1150,7 +1180,7 @@
               </li>
               <li>
                 <i class="fa-solid fa-circle-check"></i>
-                <span>TELC ve Goethe formatına uygun sınav hazırlığı</span>
+                <span>TELC ve ÖSD formatına uygun sınav hazırlığı</span>
               </li>
               <li>
                 <i class="fa-solid fa-circle-check"></i>
@@ -1168,7 +1198,7 @@
           <div class="panel-inner">
             <h2>Sorunuz mu var?</h2>
             <p>
-              Hangi seviyeden başlamanız gerektiğini, TELC/Goethe sınav sürecini veya online Almanca eğitimlerini öğrenmek için AYDA ekibiyle iletişime geçebilirsiniz.
+              Hangi seviyeden başlamanız gerektiğini, TELC/ÖSD sınav sürecini veya online Almanca eğitimlerini öğrenmek için AYDA ekibiyle iletişime geçebilirsiniz.
             </p>
 
             <div class="contact-buttons">
@@ -1210,7 +1240,7 @@
       <div class="footer-left">
         <strong>© 2026 AYDA Dil Akademisi</strong>
         <br>
-        TELC • Goethe • Online Almanca Sınav Hazırlığı
+        TELC • ÖSD • Online Almanca Sınav Hazırlığı
       </div>
 
       <div class="footer-links">
