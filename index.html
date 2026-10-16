@@ -945,7 +945,53 @@
         min-height: 230px;
       }
     }
-  </style>
+  
+/* AYDA exam-resource launcher: lighter, quicker mobile navigation */
+:root{--ayda-blue:#102541;--ayda-blue-dark:#0b1b30;--ayda-blue-light:#244864;--ayda-gold:#e8c37b;--bg:#fbf9f5}
+html{scroll-behavior:smooth}
+.hero{padding:30px 0 20px}
+.hero h1{font-size:clamp(28px,4vw,44px);line-height:1.14;letter-spacing:-.8px}
+.hero p{font-size:14px;line-height:1.5;max-width:700px}
+.level-section{scroll-margin-top:15px}
+.level-grid{gap:12px}
+.level-card{min-height:0;border-radius:16px;padding:18px}
+.level-label{width:60px;height:60px;min-width:60px;border-radius:15px;font-size:23px}
+.level-body h3{font-size:17px;line-height:1.3}
+.level-body p{font-size:12px;line-height:1.5}
+.level-tags{gap:6px}
+.level-footer{margin-top:14px}
+.enter-pill{min-height:39px}
+.password-card{max-height:calc(100dvh - 24px);overflow-y:auto}
+:focus-visible{outline:3px solid #e8c37b;outline-offset:3px}
+@media(max-width:720px){
+ .page{padding-left:12px;padding-right:12px}
+ .topbar{padding-top:9px;gap:8px}
+ .top-actions{display:flex;flex-wrap:nowrap;gap:7px}
+ .top-link{width:auto;min-width:0;flex:1;font-size:11px;padding:9px 8px}
+ .hero{padding:22px 0 16px}
+ .hero h1{font-size:clamp(25px,7vw,32px);letter-spacing:-.7px}
+ .hero p{font-size:13px;margin:10px 0 0}
+ .hero-actions{display:none}
+ .level-grid{grid-template-columns:1fr;gap:10px}
+ .level-card{min-height:0;padding:14px;border-radius:14px}
+ .level-top{margin-bottom:10px}
+ .level-label{width:48px;height:48px;min-width:48px;font-size:19px;border-radius:12px}
+ .level-icon{font-size:19px}
+ .level-body h3{font-size:16px}
+ .level-body p{font-size:12px;line-height:1.4}
+ .level-footer{margin-top:9px}
+ .feature-panel,.contact-panel{padding:15px;border-radius:16px}
+ .password-card{padding:19px 15px;border-radius:17px}
+ .password-row{gap:8px}
+ .password-row input,.password-row button{min-height:46px;border-radius:10px}
+}
+@media(max-width:420px){
+ .top-link{width:auto;justify-content:center}
+ .level-card{min-height:0}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+</style>
 </head>
 
 <body>
