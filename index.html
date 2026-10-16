@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#234078" />
+  <meta name="theme-color" content="#122850" />
 
   <title>AYDA Sınav Hazırlık Platformu</title>
 
@@ -991,6 +991,83 @@ html{scroll-behavior:smooth}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
+
+/* B1-inspired AYDA exam platform: simple selection, gold CTA, cream background */
+:root{--ayda-blue:#122850;--ayda-blue-dark:#0b1d3e;--ayda-blue-light:#244269;--ayda-gold:#ffcf4a;--text-main:#14213d;--text-muted:#60708d;--soft-bg:#f8f7f2;--border:#dde5f0;--shadow-card:0 14px 32px #12285017;--shadow-soft:0 15px 40px #12285012}
+body{background:#f8f7f2;color:#14213d;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+body::before,body::after{display:none}
+.topbar{padding-top:17px;min-height:74px}
+.topbar .brand{color:#122850;background:#fff;border:1px solid #dde5f0;box-shadow:0 5px 15px #12285012}
+.topbar .brand-icon{background:#122850;color:#ffcf4a;border-color:#122850}
+.topbar .brand-text span{color:#60708d}
+.topbar .top-link{color:#122850;background:#fff;border:1px solid #dde5f0;box-shadow:none}
+.topbar .top-link:hover{background:#edf1f7;color:#122850}
+.hero{width:min(1180px,calc(100% - 32px));background:linear-gradient(125deg,#122850,#1b3d61);color:#fff;border-radius:24px;padding:35px 31px;text-align:left;box-shadow:0 16px 45px #12285028;overflow:hidden}
+.hero-badge{margin-bottom:15px;background:#ffffff19;animation:none;box-shadow:none}
+.hero h1{max-width:820px;margin:0 0 11px;text-align:left;font-weight:900;font-size:clamp(31px,4vw,48px);letter-spacing:-.05em;line-height:1.08;animation:none;text-shadow:none}
+.hero h1 span{color:#ffcf4a}
+.hero p{max-width:690px;margin:0;text-align:left;color:#d5e2f2;font-size:14px;line-height:1.55;animation:none}
+.hero-actions{justify-content:flex-start;margin-top:17px;animation:none}
+.hero-actions .secondary-cta{background:#ffcf4a;color:#2f270b;font-weight:900;border-color:#ffcf4a}
+.hero-actions .primary-cta{background:#30b889}
+.level-section{padding:26px 0 18px}
+.section-title{text-align:left;color:#122850;margin-bottom:14px}
+.section-title h2{font-weight:900;letter-spacing:-.035em;font-size:clamp(22px,3vw,28px)}
+.section-title p{color:#60708d;font-size:13px}
+.exam-toolbar{display:flex;align-items:center;flex-wrap:wrap;gap:11px;justify-content:space-between;background:#fff;border:1px solid #dde5f0;border-radius:15px;padding:12px 14px;margin-bottom:13px;box-shadow:0 6px 18px #1228500a}
+.exam-filter-row{display:flex;align-items:center;gap:8px;min-width:0;flex-wrap:wrap}
+.exam-filter-row strong{color:#60708d;font-size:11px;font-weight:850}
+.exam-filter-list{display:flex;align-items:center;gap:5px;max-width:100%;overflow-x:auto;scrollbar-width:thin}
+.exam-filter{border:1px solid #dce4f0;border-radius:999px;min-height:35px;min-width:35px;padding:6px 11px;background:#f7f9fb;color:#122850;font:800 11.5px/1.2 inherit;cursor:pointer}
+.exam-filter.active{background:#122850;color:white;border-color:#122850}
+.exam-count{color:#687790;font-size:11px;font-weight:800}
+.exam-no-results{border:1px dashed #cdd8e6;border-radius:12px;text-align:center;background:#fff;color:#63718b;padding:18px;font-size:13px;margin-bottom:10px}
+.exam-no-results[hidden],.level-card[hidden]{display:none!important}
+.level-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+.level-card{animation:none;border:1px solid #dde5f0;background:#fff;border-radius:17px;min-height:0;padding:18px;box-shadow:0 7px 24px #1228500d}
+.level-card::before{background:linear-gradient(145deg,#fff,#f9fbfd)}
+.level-card::after{background:#ffcf4a22}
+.level-card:hover{transform:translateY(-2px);box-shadow:0 11px 26px #12285019;border-color:#e3ba56}
+.level-label{background:#122850;color:#ffcf4a;border:0;width:52px;height:52px;min-width:52px;border-radius:13px;font-size:21px}
+.level-body h3{font-size:17px;font-weight:900;color:#122850}
+.level-body p{font-size:12px;color:#60708d;line-height:1.5}
+.level-tags{margin-top:9px}
+.level-footer{margin-top:13px}
+.level-footer .enter-pill{background:#ffcf4a;color:#30270b;border-color:#ffcf4a;font-weight:900;min-height:40px;padding:9px 14px}
+.level-card:hover .enter-pill{background:#efbd34;border-color:#efbd34}
+.features{padding-top:14px}
+.feature-panel,.contact-panel{border:1px solid #dde5f0;box-shadow:0 6px 22px #1228500c;background:#fff;border-radius:18px;padding:19px}
+.footer{color:#5f6e88;border-color:#dde5f0;margin-top:8px}
+.footer-links a{color:#122850}
+.footer-links a:hover{color:#1f6c5b}
+.password-card{background:#fff;border:1px solid #dde5f0;border-radius:19px}
+.password-row button{background:#122850;color:#fff}
+.exam-modal-open{overflow:hidden}
+:focus-visible{outline:3px solid #ffcf4a;outline-offset:3px}
+@media(max-width:950px){.level-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){
+ .topbar{padding-top:9px;gap:6px}
+ .topbar .brand{padding:7px 10px}
+ .hero{width:calc(100% - 20px);padding:23px 20px;border-radius:19px}
+ .hero h1{font-size:clamp(27px,7vw,36px)}
+ .hero p{font-size:12px}
+ .hero-actions{display:none}
+ .level-section{width:calc(100% - 20px);padding:20px 0 10px}
+ .section-title h2{font-size:22px}
+ .level-grid{grid-template-columns:1fr;gap:9px}
+ .level-card{padding:14px;border-radius:14px}
+ .level-card .level-top{margin-bottom:9px}
+ .level-label{width:46px;height:46px;min-width:46px;font-size:19px}
+ .exam-toolbar{align-items:flex-start;gap:8px;padding:11px}
+ .exam-filter-row{width:100%;justify-content:space-between}
+ .exam-count{margin-left:auto}
+ .features{width:calc(100% - 20px)}
+ .footer{width:calc(100% - 20px);padding-bottom:100px}
+ .top-actions{gap:6px}
+ .top-link{font-size:11px}
+ .password-card{padding:20px 17px}
+}
+@media(prefers-reduced-motion:reduce){.level-card,.hero h1,.hero p,.hero-badge{animation:none}}
 </style>
 </head>
 
@@ -1055,6 +1132,22 @@ html{scroll-behavior:smooth}
           <p>Her seviye için şifre doğrulamasından sonra ilgili çalışma platformuna yönlendirilirsiniz.</p>
         </div>
 
+        <div class="exam-toolbar" aria-label="Sınav hazırlığı filtreleri">
+<div class="exam-filter-row"><strong>Seviye</strong><div class="exam-filter-list" role="group" aria-label="Seviye seçimi">
+<button type="button" class="exam-filter active" data-group="level" data-value="all" aria-pressed="true">Tümü</button>
+<button type="button" class="exam-filter" data-group="level" data-value="A1" aria-pressed="false">A1</button>
+<button type="button" class="exam-filter" data-group="level" data-value="A2" aria-pressed="false">A2</button>
+<button type="button" class="exam-filter" data-group="level" data-value="B1" aria-pressed="false">B1</button>
+<button type="button" class="exam-filter" data-group="level" data-value="B2" aria-pressed="false">B2</button>
+</div></div>
+<div class="exam-filter-row"><strong>Sınav</strong><div class="exam-filter-list" role="group" aria-label="Sınav türü seçimi">
+<button type="button" class="exam-filter active" data-group="type" data-value="all" aria-pressed="true">Tümü</button>
+<button type="button" class="exam-filter" data-group="type" data-value="TELC" aria-pressed="false">telc</button>
+<button type="button" class="exam-filter" data-group="type" data-value="ÖSD" aria-pressed="false">ÖSD</button>
+</div></div>
+<div id="examCount" class="exam-count" aria-live="polite">5 hazırlık alanı</div>
+</div>
+<p id="examNoResults" class="exam-no-results" hidden>Bu seçim için bir hazırlık alanı bulunmuyor. Başka seviye veya sınav türü seçin.</p>
         <div class="level-grid">
 
           <a href="#" class="level-card" onclick="openPasswordModal('A1 TELC Hazırlık', 'https://onurqlp.github.io/A1hazirlik/'); return false;">
@@ -1299,9 +1392,9 @@ html{scroll-behavior:smooth}
   </div>
 
   <!-- Şifre Modal -->
-  <div class="password-modal" id="aydaLoginBox">
+  <div class="password-modal" id="aydaLoginBox" role="dialog" aria-modal="true" aria-labelledby="modalLevelName">
     <div class="password-card">
-      <button class="password-close" type="button" onclick="closePasswordModal()">×</button>
+      <button class="password-close" type="button" aria-label="Şifre penceresini kapat" onclick="closePasswordModal()">×</button>
 
       <div class="password-card-icon">
         <i class="fa-solid fa-lock"></i>
@@ -1334,6 +1427,7 @@ html{scroll-behavior:smooth}
     const AYDA_TARGET_KEY = "ayda_exam_target_url";
 
     let targetUrl = "";
+    let previousFocus = null;
 
     const aydaLoginBox = document.getElementById("aydaLoginBox");
     const aydaPasswordInput = document.getElementById("aydaPasswordInput");
@@ -1356,6 +1450,7 @@ html{scroll-behavior:smooth}
     }
 
     function openPasswordModal(levelName, url) {
+      previousFocus = document.activeElement;
       targetUrl = url;
       sessionStorage.setItem(AYDA_TARGET_KEY, url);
 
@@ -1368,6 +1463,7 @@ html{scroll-behavior:smooth}
       aydaPasswordInput.value = "";
       aydaLoginMessage.textContent = "";
       aydaLoginBox.classList.add("active");
+      document.body.classList.add("exam-modal-open");
 
       setTimeout(() => {
         aydaPasswordInput.focus();
@@ -1376,6 +1472,8 @@ html{scroll-behavior:smooth}
 
     function closePasswordModal() {
       aydaLoginBox.classList.remove("active");
+      document.body.classList.remove("exam-modal-open");
+      if(previousFocus && typeof previousFocus.focus === "function")previousFocus.focus();
       aydaPasswordInput.value = "";
       aydaLoginMessage.textContent = "";
       targetUrl = "";
@@ -1403,6 +1501,36 @@ html{scroll-behavior:smooth}
     accessObserver.observe(aydaProtectedContent, {
       attributes: true,
       attributeFilter: ["style", "class"]
+    });
+
+    const examFilterState={level:"all",type:"all"};
+    const examCards=Array.from(document.querySelectorAll(".level-card"));
+    const examFilters=Array.from(document.querySelectorAll(".exam-filter"));
+    function updateExamFilters(){
+      let visible=0;
+      examCards.forEach(card=>{
+        const title=(card.querySelector("h3")?.textContent||"").trim();
+        const level=(card.querySelector(".level-label")?.textContent||"").trim();
+        const type=/ÖSD/i.test(title)?"ÖSD":"TELC";
+        const show=(examFilterState.level==="all"||level===examFilterState.level)&&(examFilterState.type==="all"||type===examFilterState.type);
+        card.hidden=!show;
+        if(show)visible++;
+      });
+      examFilters.forEach(btn=>{
+        const current=examFilterState[btn.dataset.group]===btn.dataset.value;
+        btn.setAttribute("aria-pressed",String(current));
+        btn.classList.toggle("active",current);
+      });
+      document.getElementById("examCount").textContent=visible+" hazırlık alanı";
+      document.getElementById("examNoResults").hidden=visible!==0;
+    }
+    examFilters.forEach(btn=>btn.addEventListener("click",()=>{
+      examFilterState[btn.dataset.group]=btn.dataset.value;
+      updateExamFilters();
+    }));
+    updateExamFilters();
+    document.addEventListener("keydown",event=>{
+      if(event.key==="Escape"&&aydaLoginBox.classList.contains("active"))closePasswordModal();
     });
 
     document.addEventListener("DOMContentLoaded", function() {
