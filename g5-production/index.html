@@ -1154,29 +1154,26 @@ body{background:#fbf9f5;color:#172b46;font-family:Inter,system-ui,-apple-system,
 }
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 </style>
-</head>
+<style id="ayda-g5-mobile-header-fix">
+.topbar .ayda-g5-real-logo{display:flex!important;align-items:center!important;justify-content:flex-start!important;flex:0 0 auto!important;width:auto!important;min-width:0!important;height:auto!important;min-height:50px!important;padding:0!important;border:0!important;background:transparent!important;border-radius:0!important;box-shadow:none!important;overflow:visible!important}
+.topbar .ayda-g5-real-logo img{display:block!important;width:134px!important;max-width:100%!important;height:auto!important;object-fit:contain!important;opacity:1!important;visibility:visible!important}
+.ayda-g5-icon{font:900 1em/1 system-ui,Arial,sans-serif!important;display:inline-flex;justify-content:center;align-items:center;vertical-align:middle;min-width:1em}
+@media(max-width:700px){.topbar{display:flex!important;align-items:center!important;flex-wrap:wrap!important;gap:12px!important;padding:12px!important}.topbar .ayda-g5-real-logo{width:100%!important;max-width:100%!important;justify-content:center!important;min-height:59px!important}.topbar .ayda-g5-real-logo img{width:160px!important;max-width:70vw!important;height:auto!important}.topbar .top-actions{width:100%!important;display:grid!important;grid-template-columns:1fr 1fr!important;gap:8px!important}.topbar .top-actions .top-link{display:flex!important;align-items:center!important;justify-content:center!important;gap:7px!important;min-width:0!important;padding:10px!important}}
+</style></head>
 
 <body>
   <div class="page">
 
     <header class="topbar">
-      <a href="https://www.aydadil.com" target="_blank" rel="noopener" class="brand">
-        <div class="brand-icon">
-          <i class="fa-solid fa-graduation-cap"></i>
-        </div>
-        <div class="brand-text">
-          <strong>AYDA Dil Akademisi</strong>
-          <span>TELC • ÖSD • Online Almanca</span>
-        </div>
-      </a>
+      <a href="https://www.aydadil.com/" class="brand ayda-g5-real-logo" aria-label="AYDA Dil Akademisi ana sayfa"><img src="https://www.aydadil.com/wp-content/uploads/2026/10/ayda-home-v89-baa791945bb954a30b.png" width="134" height="49" alt="AYDA Dil Akademisi logosu" loading="eager" decoding="async"></a>
 
       <div class="top-actions">
         <a href="https://www.aydadil.com" target="_blank" rel="noopener" class="top-link">
-          <i class="fa-solid fa-globe"></i>
+          <span class="ayda-g5-icon" aria-hidden="true">↗</span>
           Web Sitesi
         </a>
         <a href="https://www.instagram.com/ayda.dil/" target="_blank" rel="noopener" class="top-link">
-          <i class="fa-brands fa-instagram"></i>
+          <span class="ayda-g5-icon" aria-hidden="true">◎</span>
           Instagram
         </a>
       </div>
@@ -1185,7 +1182,7 @@ body{background:#fbf9f5;color:#172b46;font-family:Inter,system-ui,-apple-system,
     <main>
       <section class="hero">
         <div class="hero-badge">
-          <i class="fa-solid fa-certificate"></i>
+          <span class="ayda-g5-icon" aria-hidden="true">★</span>
           AYDA Sınav Hazırlık Platformu
         </div>
 
@@ -1200,12 +1197,12 @@ body{background:#fbf9f5;color:#172b46;font-family:Inter,system-ui,-apple-system,
 
         <div class="hero-actions">
           <a href="#seviyeler" class="secondary-cta">
-            <i class="fa-solid fa-layer-group"></i>
+            <span class="ayda-g5-icon" aria-hidden="true">▦</span>
             Seviyeleri Gör
           </a>
 
           <a href="https://wa.me/905409122503" target="_blank" rel="noopener" class="primary-cta">
-            <i class="fa-brands fa-whatsapp"></i>
+            <span class="ayda-g5-icon" aria-hidden="true">✉</span>
             Sorunuz varsa bize ulaşın
           </a>
         </div>
@@ -1240,7 +1237,7 @@ body{background:#fbf9f5;color:#172b46;font-family:Inter,system-ui,-apple-system,
               <div class="level-top">
                 <div class="level-label">A1</div>
                 <div class="level-icon">
-                  <i class="fa-solid fa-seedling"></i>
+                  <span class="ayda-g5-icon" aria-hidden="true">◈</span>
                 </div>
               </div>
 
@@ -1251,8 +1248,8 @@ body{background:#fbf9f5;color:#172b46;font-family:Inter,system-ui,-apple-system,
                 </p>
 
                 <div class="level-tags">
-                  <span class="tag"><i class="fa-solid fa-check"></i> A1 Sınav</span>
-                  <span class="tag"><i class="fa-solid fa-check"></i> TELC</span>
+                  <span class="tag"><span class="ayda-g5-icon" aria-hidden="true">✓</span> A1 Sınav</span>
+                  <span class="tag"><span class="ayda-g5-icon" aria-hidden="true">✓</span> TELC</span>
                 </div>
               </div>
             </div>
@@ -1260,7 +1257,7 @@ body{background:#fbf9f5;color:#172b46;font-family:Inter,system-ui,-apple-system,
             <div class="level-footer">
               <span>Şifre ile giriş</span>
               <span class="enter-pill">
-                Başla <i class="fa-solid fa-arrow-right"></i>
+                Başla <span class="ayda-g5-icon" aria-hidden="true">→</span>
               </span>
             </div>
           </a>
@@ -1270,7 +1267,7 @@ body{background:#fbf9f5;color:#172b46;font-family:Inter,system-ui,-apple-system,
               <div class="level-top">
                 <div class="level-label">A1</div>
                 <div class="level-icon">
-                  <i class="fa-solid fa-certificate"></i>
+                  <span class="ayda-g5-icon" aria-hidden="true">★</span>
                 </div>
               </div>
 
@@ -1281,8 +1278,8 @@ body{background:#fbf9f5;color:#172b46;font-family:Inter,system-ui,-apple-system,
                 </p>
 
                 <div class="level-tags">
-                  <span class="tag"><i class="fa-solid fa-check"></i> A1 Sınav</span>
-                  <span class="tag"><i class="fa-solid fa-check"></i> ÖSD</span>
+                  <span class="tag"><span class="ayda-g5-icon" aria-hidden="true">✓</span> A1 Sınav</span>
+                  <span class="tag"><span class="ayda-g5-icon" aria-hidden="true">✓</span> ÖSD</span>
                 </div>
               </div>
             </div>
@@ -1290,7 +1287,7 @@ body{background:#fbf9f5;color:#172b46;font-family:Inter,system-ui,-apple-system,
             <div class="level-footer">
               <span>Şifre ile giriş</span>
               <span class="enter-pill">
-                Başla <i class="fa-solid fa-arrow-right"></i>
+                Başla <span class="ayda-g5-icon" aria-hidden="true">→</span>
               </span>
             </div>
           </a>
@@ -1300,7 +1297,7 @@ body{background:#fbf9f5;color:#172b46;font-family:Inter,system-ui,-apple-system,
               <div class="level-top">
                 <div class="level-label">A2</div>
                 <div class="level-icon">
-                  <i class="fa-solid fa-book-open-reader"></i>
+                  <span class="ayda-g5-icon" aria-hidden="true">▤</span>
                 </div>
               </div>
 
@@ -1311,8 +1308,8 @@ body{background:#fbf9f5;color:#172b46;font-family:Inter,system-ui,-apple-system,
                 </p>
 
                 <div class="level-tags">
-                  <span class="tag"><i class="fa-solid fa-check"></i> A2 Sınav</span>
-                  <span class="tag"><i class="fa-solid fa-check"></i> Kelime</span>
+                  <span class="tag"><span class="ayda-g5-icon" aria-hidden="true">✓</span> A2 Sınav</span>
+                  <span class="tag"><span class="ayda-g5-icon" aria-hidden="true">✓</span> Kelime</span>
                 </div>
               </div>
             </div>
@@ -1320,7 +1317,7 @@ body{background:#fbf9f5;color:#172b46;font-family:Inter,system-ui,-apple-system,
             <div class="level-footer">
               <span>Şifre ile giriş</span>
               <span class="enter-pill">
-                Başla <i class="fa-solid fa-arrow-right"></i>
+                Başla <span class="ayda-g5-icon" aria-hidden="true">→</span>
               </span>
             </div>
           </a>
@@ -1330,7 +1327,7 @@ body{background:#fbf9f5;color:#172b46;font-family:Inter,system-ui,-apple-system,
               <div class="level-top">
                 <div class="level-label">B1</div>
                 <div class="level-icon">
-                  <i class="fa-solid fa-pen-to-square"></i>
+                  <span class="ayda-g5-icon" aria-hidden="true">✎</span>
                 </div>
               </div>
 
@@ -1341,8 +1338,8 @@ body{background:#fbf9f5;color:#172b46;font-family:Inter,system-ui,-apple-system,
                 </p>
 
                 <div class="level-tags">
-                  <span class="tag"><i class="fa-solid fa-check"></i> Lesen</span>
-                  <span class="tag"><i class="fa-solid fa-check"></i> Hören</span>
+                  <span class="tag"><span class="ayda-g5-icon" aria-hidden="true">✓</span> Lesen</span>
+                  <span class="tag"><span class="ayda-g5-icon" aria-hidden="true">✓</span> Hören</span>
                 </div>
               </div>
             </div>
@@ -1350,7 +1347,7 @@ body{background:#fbf9f5;color:#172b46;font-family:Inter,system-ui,-apple-system,
             <div class="level-footer">
               <span>Şifre ile giriş</span>
               <span class="enter-pill">
-                Başla <i class="fa-solid fa-arrow-right"></i>
+                Başla <span class="ayda-g5-icon" aria-hidden="true">→</span>
               </span>
             </div>
           </a>
@@ -1360,7 +1357,7 @@ body{background:#fbf9f5;color:#172b46;font-family:Inter,system-ui,-apple-system,
               <div class="level-top">
                 <div class="level-label">B2</div>
                 <div class="level-icon">
-                  <i class="fa-solid fa-medal"></i>
+                  <span class="ayda-g5-icon" aria-hidden="true">★</span>
                 </div>
               </div>
 
@@ -1371,8 +1368,8 @@ body{background:#fbf9f5;color:#172b46;font-family:Inter,system-ui,-apple-system,
                 </p>
 
                 <div class="level-tags">
-                  <span class="tag"><i class="fa-solid fa-check"></i> B2 Format</span>
-                  <span class="tag"><i class="fa-solid fa-check"></i> Schreiben</span>
+                  <span class="tag"><span class="ayda-g5-icon" aria-hidden="true">✓</span> B2 Format</span>
+                  <span class="tag"><span class="ayda-g5-icon" aria-hidden="true">✓</span> Schreiben</span>
                 </div>
               </div>
             </div>
@@ -1380,7 +1377,7 @@ body{background:#fbf9f5;color:#172b46;font-family:Inter,system-ui,-apple-system,
             <div class="level-footer">
               <span>Şifre ile giriş</span>
               <span class="enter-pill">
-                Başla <i class="fa-solid fa-arrow-right"></i>
+                Başla <span class="ayda-g5-icon" aria-hidden="true">→</span>
               </span>
             </div>
           </a>
@@ -1428,26 +1425,26 @@ body{background:#fbf9f5;color:#172b46;font-family:Inter,system-ui,-apple-system,
             <div class="contact-buttons">
               <a href="https://wa.me/905409122503" target="_blank" rel="noopener" class="contact-button whatsapp">
                 <span>
-                  <i class="fa-brands fa-whatsapp"></i>
+                  <span class="ayda-g5-icon" aria-hidden="true">✉</span>
                   WhatsApp ile Ulaş
                 </span>
-                <i class="fa-solid fa-arrow-right"></i>
+                <span class="ayda-g5-icon" aria-hidden="true">→</span>
               </a>
 
               <a href="https://www.aydadil.com" target="_blank" rel="noopener" class="contact-button">
                 <span>
-                  <i class="fa-solid fa-globe"></i>
+                  <span class="ayda-g5-icon" aria-hidden="true">↗</span>
                   www.aydadil.com
                 </span>
-                <i class="fa-solid fa-arrow-right"></i>
+                <span class="ayda-g5-icon" aria-hidden="true">→</span>
               </a>
 
               <a href="https://www.instagram.com/ayda.dil/" target="_blank" rel="noopener" class="contact-button">
                 <span>
-                  <i class="fa-brands fa-instagram"></i>
+                  <span class="ayda-g5-icon" aria-hidden="true">◎</span>
                   @ayda.dil
                 </span>
-                <i class="fa-solid fa-arrow-right"></i>
+                <span class="ayda-g5-icon" aria-hidden="true">→</span>
               </a>
             </div>
           </div>
@@ -1456,7 +1453,7 @@ body{background:#fbf9f5;color:#172b46;font-family:Inter,system-ui,-apple-system,
     </main>
 
     <a href="https://wa.me/905409122503" target="_blank" rel="noopener" class="floating-whatsapp">
-      <i class="fa-brands fa-whatsapp"></i>
+      <span class="ayda-g5-icon" aria-hidden="true">✉</span>
       Sorunuz varsa bize ulaşın
     </a>
 
