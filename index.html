@@ -1068,32 +1068,119 @@ body::before,body::after{display:none}
  .password-card{padding:20px 17px}
 }
 @media(prefers-reduced-motion:reduce){.level-card,.hero h1,.hero p,.hero-badge{animation:none}}
+
+/* AYDA G1: G0 onayli tasarim diline uyum — uygulama mantigi degismedi */
+:root{--ayda-blue:#234078;--ayda-blue-dark:#172b52;--soft-bg:#f6f8fc;--shadow-card:0 10px 32px rgba(23,43,82,.07)}
+body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif!important;background:#f6f8fc!important;color:#172b52}
+body:before,body:after{display:none!important}
+.page{min-height:100vh}
+.g1-header{background:#234078;color:#fff;position:relative;z-index:3}
+.g1-wrap{max-width:1180px;margin:0 auto;padding-left:22px;padding-right:22px}
+.g1-announcement{background:#172b52}
+.g1-announcement .g1-wrap{min-height:32px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:11px;letter-spacing:.3px}
+.g1-announcement a{color:#fff;text-decoration:none;font-weight:700}
+.g1-navigation{min-height:95px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.g1-logo{display:flex;align-items:center;justify-content:center;flex:0 0 200px;max-width:45vw;min-height:64px;text-decoration:none}
+.g1-logo img{display:block!important;width:100%!important;max-width:200px!important;height:auto!important;aspect-ratio:134/49;object-fit:contain;object-position:center}
+.g1-navigation nav{display:flex;align-items:center;justify-content:center;gap:22px;flex:1}
+.g1-navigation nav a,.g1-web{color:#fff;text-decoration:none;font-size:13px;font-weight:750;white-space:nowrap}
+.g1-navigation nav a[aria-current=page]{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:7px}
+.g1-navigation nav a:hover,.g1-web:hover{color:#e9c777}
+.g1-web{border:1px solid #ffffff55;border-radius:999px;padding:11px 14px}
+.hero{padding:54px 0 32px}
+.hero-badge{background:#eaf0fa;border:1px solid #dbe5f4;color:#234078;box-shadow:none;backdrop-filter:none}
+.hero-badge i,.hero h1 span{color:#234078}
+.hero h1{color:#172b52;text-shadow:none;font-size:clamp(2.3rem,5vw,4.25rem);letter-spacing:-1.5px}
+.hero p{color:#667085}
+.primary-cta{background:#234078;color:#fff;border-radius:13px;box-shadow:none}
+.primary-cta:hover{background:#172b52;box-shadow:0 7px 20px #172b5222}
+.secondary-cta{background:white;color:#234078;border:1px solid #dae4f0;border-radius:13px;backdrop-filter:none}
+.secondary-cta:hover{background:#edf3fb;color:#172b52}
+.section-title,.section-title h2{color:#172b52}
+.section-title p{color:#667085}
+.level-card{border-radius:18px;background:#fff;border:1px solid #e1e7f0;box-shadow:0 8px 30px #172b5210;min-height:285px}
+.level-card:hover{box-shadow:0 12px 30px #172b5220;border-color:#b6c9e5}
+.level-card:before{opacity:.14}
+.level-footer .enter-pill{border-radius:12px}
+.feature-panel,.contact-panel{border-radius:20px}
+.exam-toolbar{background:#fff;border:1px solid #e1e7f0;border-radius:18px}
+.exam-filter{border-radius:11px}
+.exam-filter.active,.exam-filter[aria-pressed=true]{background:#234078!important;color:#fff!important}
+.password-card{border-radius:22px}
+.password-row button{border-radius:12px;background:#234078}
+.floating-whatsapp{border-radius:13px}
+@media(max-width:860px){.g1-navigation nav{display:none}.g1-navigation{min-height:80px}.g1-web{font-size:12px}.hero{padding-top:36px}}
+@media(max-width:650px){.g1-wrap{padding-left:16px;padding-right:16px}.g1-navigation{min-height:75px;gap:12px}.g1-logo{flex-basis:135px;max-width:42vw;min-height:46px}.g1-logo img{max-width:135px!important}.g1-web{padding:9px 11px}.g1-announcement .g1-wrap{font-size:9px}.hero h1{font-size:clamp(2rem,8vw,3rem)}.hero{padding-top:29px}.level-grid{gap:12px}.level-card{border-radius:16px}.hero-actions a{min-height:48px}}
+@media(max-width:390px){.g1-logo{flex-basis:112px}.g1-logo img{max-width:112px!important}.g1-web{font-size:10px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+/* G1 kurumsal görünüm doğrulama düzeltmeleri — özgün sonradan eklenen stillerin üzerinde */
+body .page main .hero{background:#fff!important;color:#172b52!important;border:1px solid #e1e7f0!important;border-radius:22px!important;box-shadow:0 14px 42px rgba(23,43,82,.06)!important;padding:38px 42px!important;margin-top:25px!important;margin-bottom:22px!important;text-align:left!important;overflow:hidden!important}
+body .page main .hero h1,body .page main .hero h1 span{color:#172b52!important;text-shadow:none!important;line-height:1.13!important;max-width:860px!important;font-size:clamp(30px,4.4vw,53px)!important;letter-spacing:-1.2px!important}
+body .page main .hero h1 span{color:#234078!important}
+body .page main .hero p{color:#667085!important;max-width:690px!important;font-size:15px!important;line-height:1.7!important;margin:0!important;text-align:left!important}
+body .page main .hero .hero-badge{color:#234078!important;background:#edf3fb!important;border:1px solid #dce6f3!important;box-shadow:none!important;padding:9px 13px!important}
+body .page main .hero .hero-badge i{color:#234078!important}
+body .page main .hero .hero-actions{justify-content:flex-start!important;margin-top:23px!important}
+body .page main .hero .hero-actions a{border-radius:12px!important;min-height:48px!important;padding:13px 18px!important;font-weight:800!important;box-shadow:none!important;transform:none!important}
+body .page main .hero .hero-actions .primary-cta{background:#234078!important;color:#fff!important;border:1px solid #234078!important}
+body .page main .hero .hero-actions .primary-cta:hover{background:#172b52!important}
+body .page main .hero .hero-actions .secondary-cta{background:#eef3ff!important;color:#234078!important;border:1px solid #d8e5f6!important}
+body .page main .hero .hero-actions .secondary-cta:hover{background:#e1ebfa!important}
+body .page main .level-section .section-title h2{color:#172b52!important;line-height:1.3!important}
+body .page main .level-section .section-title p{color:#667085!important;line-height:1.6!important}
+body .page main .level-section .level-grid .level-card{background:#fff!important;border:1px solid #dfe7f3!important;border-radius:18px!important;box-shadow:0 7px 24px rgba(23,43,82,.06)!important;padding:22px!important;min-height:260px!important}
+body .page main .level-section .level-grid .level-card:hover{background:#f9fbff!important;border-color:#b6c9e5!important;box-shadow:0 12px 27px rgba(23,43,82,.10)!important}
+body .page main .level-section .level-grid .level-card:before{opacity:.07!important}
+body .page main .level-section .level-grid .level-card h3{color:#172b52!important}
+body .page main .level-section .level-grid .level-card p{color:#667085!important}
+body .page main .level-section .level-grid .level-card .enter-pill{background:#234078!important;color:#fff!important;border-radius:11px!important}
+body .page main .level-section .exam-toolbar{background:#fff!important;border:1px solid #dfe7f3!important;border-radius:16px!important}
+body .page main .level-section .exam-toolbar .exam-filter.active,body .page main .level-section .exam-toolbar .exam-filter[aria-pressed=true]{background:#234078!important;border-color:#234078!important;color:#fff!important}
+body .page main .features .feature-panel,body .page main .features .contact-panel{border-radius:20px!important}
+body .page main .features .contact-button{border-radius:12px!important}
+body .page .floating-whatsapp{border-radius:12px!important}
+@media(max-width:760px){body .page main .hero{padding:27px 21px!important;margin-top:15px!important}body .page main .hero h1,body .page main .hero h1 span{font-size:clamp(27px,7vw,35px)!important}body .page main .hero p{font-size:14px!important}body .page main .hero .hero-actions{gap:9px!important}body .page main .hero .hero-actions a{width:100%!important}body .page main .level-section .level-grid .level-card{min-height:0!important;padding:18px!important}}
+@media(max-width:390px){body .page main .hero{padding:22px 16px!important}body .page main .hero h1,body .page main .hero h1 span{font-size:26px!important}}
+</style>
+<style id="g1-clean-corporate">
+html body{background:#f5f7fb!important;font-family:Inter,Arial,sans-serif!important}
+html body:before,html body:after{display:none!important}
+html body .page main{width:100%!important}
+html body .page main section.hero{display:block!important;width:min(1100px,calc(100% - 32px))!important;margin:28px auto 30px!important;padding:40px 45px!important;background:#fff!important;background-image:none!important;border:1px solid #e1e7f0!important;border-radius:22px!important;box-shadow:0 10px 34px rgba(23,43,82,.06)!important;text-align:left!important;color:#172b52!important;min-height:0!important}
+html body .page main section.hero .hero-badge{background:#eef3ff!important;color:#234078!important;border:1px solid #dce5f2!important;box-shadow:none!important;border-radius:999px!important;margin-bottom:18px!important}
+html body .page main section.hero h1,html body .page main section.hero h1 span{display:inline!important;color:#172b52!important;-webkit-text-fill-color:#172b52!important;text-shadow:none!important;background:none!important;font-size:clamp(30px,4.3vw,51px)!important;line-height:1.14!important;letter-spacing:-1.2px!important;font-weight:800!important;opacity:1!important;text-align:left!important}
+html body .page main section.hero h1{display:block!important;margin:0 0 18px!important;max-width:830px!important}
+html body .page main section.hero h1 span{color:#234078!important;-webkit-text-fill-color:#234078!important}
+html body .page main section.hero p{color:#667085!important;-webkit-text-fill-color:#667085!important;font-size:15px!important;line-height:1.65!important;opacity:1!important;text-align:left!important;max-width:720px!important;margin:0!important}
+html body .page main section.hero .hero-actions{display:flex!important;justify-content:flex-start!important;gap:12px!important;margin-top:25px!important}
+html body .page main section.hero .hero-actions a{border-radius:12px!important;box-shadow:none!important;background:#234078!important;color:white!important;border:1px solid #234078!important;padding:12px 20px!important;transform:none!important}
+html body .page main section.hero .hero-actions a.secondary-cta{background:#edf3fb!important;color:#234078!important;border-color:#d9e5f4!important}
+html body .page main .level-section{width:min(1100px,calc(100% - 32px))!important;margin:auto!important}
+html body .page main .level-section .section-title,html body .page main .level-section .section-title h2{color:#172b52!important;text-align:left!important}
+html body .page main .level-section .section-title p{color:#667085!important;text-align:left!important}
+html body .page main .level-grid{gap:15px!important}
+html body .page main .level-grid .level-card{background:white!important;background-image:none!important;border:1px solid #e0e7f0!important;border-radius:18px!important;box-shadow:0 6px 22px #172b5210!important;padding:23px!important;min-height:260px!important}
+html body .page main .level-grid .level-card::before,html body .page main .level-grid .level-card::after{opacity:.03!important}
+html body .page main .level-grid .level-card h3{color:#172b52!important}
+html body .page main .level-grid .level-card p{color:#667085!important}
+html body .page main .exam-toolbar{background:#fff!important;border:1px solid #dfe7f2!important;border-radius:15px!important}
+html body .page main .exam-filter[aria-pressed=true]{color:#fff!important;background:#234078!important;border-color:#234078!important}
+html body .page main .features{width:min(1100px,calc(100% - 32px))!important;margin-left:auto!important;margin-right:auto!important}
+html body .page .floating-whatsapp{border-radius:12px!important}
+@media(max-width:760px){html body .page main section.hero{padding:25px 20px!important;margin:15px auto 24px!important}html body .page main section.hero h1,html body .page main section.hero h1 span{font-size:clamp(27px,7.4vw,36px)!important}html body .page main section.hero p{font-size:14px!important}html body .page main section.hero .hero-actions{flex-direction:column!important}html body .page main section.hero .hero-actions a{width:100%!important}html body .page main .level-grid .level-card{min-height:0!important;padding:18px!important}}
 </style>
 </head>
 
 <body>
   <div class="page">
 
-    <header class="topbar">
-      <a href="https://www.aydadil.com" target="_blank" rel="noopener" class="brand">
-        <div class="brand-icon">
-          <i class="fa-solid fa-graduation-cap"></i>
-        </div>
-        <div class="brand-text">
-          <strong>AYDA Dil Akademisi</strong>
-          <span>TELC • ÖSD • Online Almanca</span>
-        </div>
-      </a>
-
-      <div class="top-actions">
-        <a href="https://www.aydadil.com" target="_blank" rel="noopener" class="top-link">
-          <i class="fa-solid fa-globe"></i>
-          Web Sitesi
-        </a>
-        <a href="https://www.instagram.com/ayda.dil/" target="_blank" rel="noopener" class="top-link">
-          <i class="fa-brands fa-instagram"></i>
-          Instagram
-        </a>
+    <header class="g1-header">
+      <div class="g1-announcement"><div class="g1-wrap"><span>AYDA DİL AKADEMİSİ · DİJİTAL ÖĞRENME</span><a href="https://www.aydadil.com/" target="_blank" rel="noopener noreferrer">Kurumsal web sitesi ↗</a></div></div>
+      <div class="g1-navigation g1-wrap">
+        <a href="https://ders.aydadil.com/" class="g1-logo" aria-label="AYDA Öğrenci Portalı"><img src="https://www.aydadil.com/wp-content/uploads/2026/10/ayda-home-v89-baa791945bb954a30b.png" width="134" height="49" decoding="async" alt="AYDA Dil Akademisi logosu"></a>
+        <nav aria-label="Üst menü"><a href="https://ders.aydadil.com/">Öğrenci Portalı</a><a href="https://www.aydadil.com/bibliothek/">Kütüphane</a><a href="https://www.aydadil.com/sinavhazirlik/" aria-current="page">Sınav Hazırlık</a></nav>
+        <a class="g1-web" href="https://www.aydadil.com/" target="_blank" rel="noopener noreferrer">AYDA Ana Sayfa <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
       </div>
     </header>
 
